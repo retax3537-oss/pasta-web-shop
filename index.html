@@ -64,7 +64,6 @@
       max-width: 100%;
     }
 
-    /* Top Announcement Bar */
     .top-bar {
       background: var(--text-primary);
       color: #FFF;
@@ -78,7 +77,6 @@
       font-weight: 700;
     }
 
-    /* Sticky Header */
     header {
       position: sticky;
       top: 0;
@@ -157,7 +155,7 @@
       color: #fff;
       background: var(--terracotta);
     }
-    .tier-chip.bronze { background: #A46B49; }
+    .tier-chip.welcome { background: #A46B49; }
     .tier-chip.silver { background: #7E8790; }
     .tier-chip.gold { background: #C89B3C; }
     .tier-chip.vip { background: #1E1B18; }
@@ -188,7 +186,6 @@
       border-radius: 999px;
     }
 
-    /* Hero Slider */
     .hero-section {
       position: relative;
       width: 100%;
@@ -335,7 +332,6 @@
     .hero-prev { left: 20px; }
     .hero-next { right: 20px; }
 
-    /* Common Section Layout */
     section {
       padding: 80px 24px;
     }
@@ -369,7 +365,6 @@
       margin: 0 auto;
     }
 
-    /* Pasta Type Smart Curation Section */
     .curation-section {
       background: var(--bg-warm);
       border-top: 1px solid var(--border-light);
@@ -489,7 +484,6 @@
       color: var(--text-secondary);
     }
 
-    /* Full Store Catalog */
     .filter-bar {
       display: flex;
       justify-content: space-between;
@@ -643,7 +637,6 @@
       color: #fff;
     }
 
-    /* Membership & Point Tier Section */
     .membership-section {
       background: var(--bg-warm);
       border-top: 1px solid var(--border-light);
@@ -717,7 +710,6 @@
       gap: 20px;
     }
 
-    /* Footer */
     footer {
       background: var(--text-primary);
       color: rgba(255,255,255,0.75);
@@ -759,7 +751,6 @@
       font-size: 0.8rem;
     }
 
-    /* Slide-over Cart & Checkout Drawer */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
@@ -873,7 +864,6 @@
       color: var(--terracotta);
     }
 
-    /* Modals (Auth / Checkout / Order Complete) */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -940,7 +930,6 @@
       color: var(--terracotta);
     }
 
-    /* Toast Notification */
     .toast {
       position: fixed;
       bottom: 26px;
@@ -977,12 +966,10 @@
 </head>
 <body>
 
-  <!-- Top Announcement -->
   <div class="top-bar">
     신규 회원가입 시 즉시 사용 가능한 <span>웰컴 3,000P</span> 지급 & 첫 구매 시 <span>SILVER 등급</span> 자동 승급!
   </div>
 
-  <!-- Header -->
   <header>
     <div class="nav-container">
       <a href="#" class="logo">TERRA PASTA<span class="logo-dot"></span></a>
@@ -994,7 +981,7 @@
       <div class="nav-actions">
         <div id="userStatusArea" class="user-badge-pill" onclick="openAuthModal()">
           <span id="headerUserName">로그인 / 회원가입</span>
-          <span id="headerUserTier" class="tier-chip bronze">GUEST</span>
+          <span id="headerUserTier" class="tier-chip welcome">GUEST</span>
           <span id="headerUserPoints" style="color: var(--terracotta);">0P</span>
         </div>
         <button class="btn-icon" onclick="toggleCart(true)">
@@ -1004,7 +991,6 @@
     </div>
   </header>
 
-  <!-- Hero Slider (4 Slides) -->
   <section class="hero-section" style="padding: 0;">
     <div class="hero-slide active">
       <img src="img/hero_1.jpg" alt="이탈리아 아티장 파스타 재료 컬렉션">
@@ -1074,7 +1060,6 @@
     </div>
   </section>
 
-  <!-- Pasta Type Smart Curation -->
   <section id="curation" class="curation-section">
     <div class="container">
       <div class="section-header">
@@ -1084,14 +1069,10 @@
       </div>
 
       <div class="pasta-tabs" id="pastaTabs"></div>
-
-      <div class="recipe-bundle-box" id="bundleDisplay">
-        <!-- Populated dynamically by JS -->
-      </div>
+      <div class="recipe-bundle-box" id="bundleDisplay"></div>
     </div>
   </section>
 
-  <!-- Store Product Catalog -->
   <section id="catalog">
     <div class="container">
       <div class="section-header">
@@ -1115,7 +1096,6 @@
     </div>
   </section>
 
-  <!-- Membership & Point System -->
   <section id="membership" class="membership-section">
     <div class="container">
       <div class="section-header">
@@ -1125,8 +1105,8 @@
       </div>
 
       <div class="tier-grid" id="tierGrid">
-        <div class="tier-card" data-tier="BRONZE">
-          <span class="tier-card-badge" style="background:#A46B49;">BRONZE</span>
+        <div class="tier-card" data-tier="WELCOME">
+          <span class="tier-card-badge" style="background:#A46B49;">WELCOME</span>
           <div class="tier-rate">2% 적립</div>
           <div class="tier-cond">신규 가입 회원 기본 등급</div>
           <ul class="tier-perks">
@@ -1156,7 +1136,7 @@
           </ul>
         </div>
         <div class="tier-card" data-tier="VIP">
-          <span class="tier-card-badge" style="background:#1E1B18;">VIP CHEF</span>
+          <span class="tier-card-badge" style="background:#1E1B18;">VIP</span>
           <div class="tier-rate">10% 적립</div>
           <div class="tier-cond">누적 구매 300,000원 이상</div>
           <ul class="tier-perks">
@@ -1180,7 +1160,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -1218,16 +1197,13 @@
     </div>
   </footer>
 
-  <!-- Cart Slide-Over Drawer -->
   <div id="cartBackdrop" class="drawer-backdrop" onclick="toggleCart(false)"></div>
   <aside id="cartDrawer" class="cart-drawer">
     <div class="drawer-header">
       <h3 style="font-size:1.15rem;">장바구니 & 주문결제</h3>
       <button onclick="toggleCart(false)" style="font-size:1.4rem; color:var(--text-secondary);">&times;</button>
     </div>
-    <div class="drawer-body" id="cartItemsContainer">
-      <!-- Cart items injected here -->
-    </div>
+    <div class="drawer-body" id="cartItemsContainer"></div>
     <div class="drawer-footer">
       <div class="point-use-box">
         <div style="display:flex; justify-content:space-between;">
@@ -1265,7 +1241,6 @@
     </div>
   </aside>
 
-  <!-- Auth / Membership Modal -->
   <div id="authModal" class="modal-overlay">
     <div class="modal-box">
       <div class="modal-header">
@@ -1284,13 +1259,17 @@
             <label>이름</label>
             <input type="text" id="authName" placeholder="예: 이주현" />
           </div>
+          <div class="form-group" id="signupPhoneGroup">
+            <label>연락처</label>
+            <input type="tel" id="authPhone" placeholder="010-0000-0000" />
+          </div>
           <div class="form-group">
             <label>이메일 아이디</label>
             <input type="email" id="authEmail" required placeholder="pasta@example.com" />
           </div>
           <div class="form-group">
             <label>비밀번호</label>
-            <input type="password" id="authPassword" required placeholder="4자 이상 입력" />
+            <input type="password" id="authPassword" required placeholder="6자 이상 입력" />
           </div>
           <button type="submit" class="btn-primary" style="width:100%; margin-top:8px;" id="authSubmitBtn">가입하고 3,000P 받기</button>
         </form>
@@ -1300,10 +1279,10 @@
         <div style="background:var(--bg-warm); padding:18px; border-radius:var(--radius-sm); margin-bottom:16px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
             <strong id="profileName" style="font-size:1.1rem;">회원님</strong>
-            <span id="profileTierBadge" class="tier-chip">BRONZE</span>
+            <span id="profileTierBadge" class="tier-chip welcome">WELCOME</span>
           </div>
           <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:6px;">이메일: <span id="profileEmail"></span></p>
-          <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:6px;">누적 결제 금액: <strong id="profileSpent">0원</strong></p>
+          <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:6px;">역할: <strong id="profileRole">member</strong></p>
           <p style="font-size:0.95rem; color:var(--terracotta); font-weight:700;">보유 포인트: <span id="profilePoints">0 P</span></p>
         </div>
         <h4 style="font-size:0.92rem; margin-bottom:8px;">최근 주문 내역</h4>
@@ -1315,7 +1294,6 @@
     </div>
   </div>
 
-  <!-- Checkout Payment Modal -->
   <div id="checkoutModal" class="modal-overlay">
     <div class="modal-box">
       <div class="modal-header">
@@ -1360,24 +1338,22 @@
     </div>
   </div>
 
-  <!-- Toast -->
   <div id="toast" class="toast"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const db = supabase.createClient(
-    'https://uanoqsgqkviocbopcbbh.supabase.co',
-    'sb_publishable_GfDh6BHVfdVJudlOXnkX6Q_HOeEF-mj'
-  );
-</script>
   <script>
-    // 1. Product Catalog Data (All images mapped to local img/ folder)
-    const PRODUCTS = [
+    const SUPABASE_URL = 'https://uanoqsgqkviocbopcbbh.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_GfDh6BHVfdVJudlOXnkX6Q_HOeEF-mj';
+    const db = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+    const FALLBACK_PRODUCTS = [
       {
         id: 'p1',
         category: '면',
         name: '그라냐노 브론즈 다이스 스파게티 500g',
         desc: '거친 표면 가공으로 오일과 토마토 소스가 겉돌지 않고 완벽하게 밀착되는 정통 스파게티 면.',
         price: 6800,
+        stock: 30,
         img: 'img/prod_pasta.jpg',
         badge: 'BEST',
         tags: ['알리오 올리오', '봉골레', '토마토 파스타']
@@ -1388,6 +1364,7 @@
         name: '아티장 듀럼밀 탈리아텔레 네스트 500g',
         desc: '넓고 납작한 면발로 진한 라구 소스나 크림, 트러플 버터 소스와 환상적인 조화를 이룹니다.',
         price: 7900,
+        stock: 25,
         img: 'img/prod_pasta.jpg',
         badge: 'CHEF PICK',
         tags: ['라구 볼로네제', '크림 파스타']
@@ -1398,6 +1375,7 @@
         name: '리가토니 튜브 파스타 500g',
         desc: '굵은 원통형 표면에 홈이 파여 있어 꾸덕한 치즈와 매콤한 아마트리치아나 소스를 가득 품습니다.',
         price: 7200,
+        stock: 20,
         img: 'img/hero_2.jpg',
         badge: '',
         tags: ['아마트리치아나', '까르보나라']
@@ -1408,6 +1386,7 @@
         name: '시칠리아 첫 수확 엑스트라 버진 올리브 오일 500ml',
         desc: '산도 0.18%의 냉압착 유기농 올리브 오일. 풋풋한 허브 향과 깔끔한 피니시가 일품입니다.',
         price: 24500,
+        stock: 15,
         img: 'img/prod_oil_peperoncino.jpg',
         badge: 'PREMIUM',
         tags: ['알리오 올리오', '바질 페스토', '봉골레']
@@ -1418,6 +1397,7 @@
         name: '화이트 트러플 인퓨전 엑스트라 버진 오일 250ml',
         desc: '완성된 크림 파스타나 버섯 리조또 위에 몇 방울 떨어뜨리면 깊은 풍미가 살아납니다.',
         price: 21000,
+        stock: 12,
         img: 'img/hero_3.jpg',
         badge: '',
         tags: ['크림 파스타', '까르보나라']
@@ -1428,6 +1408,7 @@
         name: '산마르자노 DOP 홀 토마토 파스타 소스 680g',
         desc: '화산 토양에서 자란 산마르자노 토마토와 생바질만으로 끓여낸 깊고 산뜻한 정통 소스.',
         price: 11800,
+        stock: 25,
         img: 'img/prod_sauce.jpg',
         badge: 'BEST',
         tags: ['토마토 파스타', '아마트리치아나']
@@ -1438,6 +1419,7 @@
         name: '제노베제 생바질 & 잣 페스토 소스 190g',
         desc: '리구리아산 어린 바질 잎과 엑스트라 버진 올리브 오일, 파르미지아노 치즈를 블렌딩했습니다.',
         price: 12500,
+        stock: 18,
         img: 'img/prod_sauce.jpg',
         badge: 'NEW',
         tags: ['바질 페스토']
@@ -1448,6 +1430,7 @@
         name: '칼라브리아 홀 건 페퍼론치노 45g',
         desc: '이탈리아 남부 칼라브리아산 건고추. 오일 파스타에 알싸하고 깔끔한 감칠맛을 더해줍니다.',
         price: 6500,
+        stock: 40,
         img: 'img/prod_oil_peperoncino.jpg',
         badge: '필수템',
         tags: ['알리오 올리오', '봉골레', '아마트리치아나']
@@ -1458,6 +1441,7 @@
         name: '시칠리아 천연 암염 플레이크 & 통후추 그라인더 세트',
         desc: '면수 간을 맞추는 미네랄 암염과 까르보나라의 핵심인 텔리체리 통흑후추 듀오.',
         price: 13900,
+        stock: 20,
         img: 'img/prod_spice.jpg',
         badge: '',
         tags: ['까르보나라', '알리오 올리오', '라구 볼로네제']
@@ -1468,13 +1452,15 @@
         name: '이탈리안 허브 오레가노 & 로스트 갈릭 시즈닝 60g',
         desc: '토마토 소스와 오일 파스타의 마늘 풍미를 손쉽게 끌어올리는 셰프 블렌드 조미료.',
         price: 7400,
+        stock: 30,
         img: 'img/prod_spice.jpg',
         badge: '',
         tags: ['토마토 파스타', '알리오 올리오']
       }
     ];
 
-    // 2. Pasta Type Curation Data
+    let PRODUCTS = [...FALLBACK_PRODUCTS];
+
     const PASTA_CURATIONS = [
       {
         id: 'aglio',
@@ -1510,35 +1496,97 @@
       }
     ];
 
-    // 3. Membership Tier Rules
-    const TIER_RULES = {
-      BRONZE: { rate: 0.02, minSpent: 0, label: 'BRONZE (2% 적립)', className: 'bronze' },
-      SILVER: { rate: 0.04, minSpent: 50000, label: 'SILVER (4% 적립)', className: 'silver' },
-      GOLD:   { rate: 0.07, minSpent: 150000, label: 'GOLD (7% 적립)', className: 'gold' },
-      VIP:    { rate: 0.10, minSpent: 300000, label: 'VIP CHEF (10% 적립)', className: 'vip' }
+    const GRADE_RULES = {
+      WELCOME: { rate: 0.02, label: 'WELCOME (2% 적립)', className: 'welcome' },
+      SILVER:  { rate: 0.04, label: 'SILVER (4% 적립)', className: 'silver' },
+      GOLD:    { rate: 0.07, label: 'GOLD (7% 적립)', className: 'gold' },
+      VIP:     { rate: 0.10, label: 'VIP (10% 적립)', className: 'vip' }
     };
 
-    // State Management (Persisted in localStorage)
-    let currentUser = JSON.parse(localStorage.getItem('terra_user')) || null;
+    let currentSessionUser = null;
+    let currentProfile = null;
     let cart = JSON.parse(localStorage.getItem('terra_cart')) || [];
     let selectedCategory = 'all';
     let selectedCurationId = 'aglio';
     let selectedPayMethod = '신용/체크카드';
     let currentSlide = 0;
+    let authMode = 'signup';
 
-    // Helper: Format KRW
-    const formatKRW = (num) => num.toLocaleString('ko-KR') + '원';
+    const formatKRW = (num) => Number(num || 0).toLocaleString('ko-KR') + '원';
 
-    // Toast Message
     function showToast(msg) {
       const toast = document.getElementById('toast');
       toast.textContent = msg;
       toast.classList.add('show');
       clearTimeout(window._toastTimer);
-      window._toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+      window._toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
     }
 
-    // Hero Slider Logic
+    function guessImageByCategory(cat, idx = 0) {
+      if (cat === '면') return idx % 2 === 0 ? 'img/prod_pasta.jpg' : 'img/hero_2.jpg';
+      if (cat === '오일') return idx % 2 === 0 ? 'img/prod_oil_peperoncino.jpg' : 'img/hero_3.jpg';
+      if (cat === '소스') return 'img/prod_sauce.jpg';
+      if (cat === '조미료') return idx % 2 === 0 ? 'img/prod_spice.jpg' : 'img/prod_oil_peperoncino.jpg';
+      return 'img/hero_1.jpg';
+    }
+
+    // Supabase: shop_products 읽기
+    async function loadProductsFromDB() {
+      const { data, error } = await db
+        .from('shop_products')
+        .select('*')
+        .order('id', { ascending: true });
+
+      if (error || !data || data.length === 0) {
+        PRODUCTS = [...FALLBACK_PRODUCTS];
+        renderCuration();
+        renderProducts();
+        return;
+      }
+
+      PRODUCTS = data.map((row, i) => ({
+        id: row.id,
+        category: row.category || '면',
+        name: row.name,
+        desc: row.description || row.desc || '엄선된 파스타 식재료입니다.',
+        price: Number(row.price) || 0,
+        stock: Number(row.stock ?? 99),
+        img: row.img || row.image_url || guessImageByCategory(row.category, i),
+        badge: row.badge || '',
+        tags: Array.isArray(row.tags) ? row.tags : ['파스타 재료']
+      }));
+
+      renderCuration();
+      renderProducts();
+    }
+
+    // Supabase: shop_profiles 읽기
+    async function fetchMyProfile(userId) {
+      const { data, error } = await db
+        .from('shop_profiles')
+        .select('*')
+        .eq('id', userId)
+        .single();
+
+      if (error) {
+        console.warn('shop_profiles 조회:', error.message);
+        return null;
+      }
+      return data;
+    }
+
+    async function refreshAuthAndProfile() {
+      const { data: { user } } = await db.auth.getUser();
+      currentSessionUser = user || null;
+      if (currentSessionUser) {
+        currentProfile = await fetchMyProfile(currentSessionUser.id);
+      } else {
+        currentProfile = null;
+      }
+      syncUserUI();
+    }
+
+    // Hero Slider
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
 
@@ -1564,7 +1612,7 @@
       slideTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
     }
 
-    // Render Pasta Curation Tabs & Bundle
+    // Curation
     function renderCuration() {
       const tabsEl = document.getElementById('pastaTabs');
       tabsEl.innerHTML = PASTA_CURATIONS.map(c => `
@@ -1574,7 +1622,9 @@
       `).join('');
 
       const active = PASTA_CURATIONS.find(c => c.id === selectedCurationId);
-      const bundleProducts = active.productIds.map(id => PRODUCTS.find(p => p.id === id));
+      const bundleProducts = active.productIds
+        .map(id => PRODUCTS.find(p => String(p.id) === String(id)) || FALLBACK_PRODUCTS.find(p => String(p.id) === String(id)))
+        .filter(Boolean);
       const totalBundlePrice = bundleProducts.reduce((sum, p) => sum + p.price, 0);
 
       document.getElementById('bundleDisplay').innerHTML = `
@@ -1616,7 +1666,7 @@
       toggleCart(true);
     }
 
-    // Render Product Catalog
+    // Catalog
     document.getElementById('categoryButtons').addEventListener('click', (e) => {
       if (!e.target.classList.contains('cat-btn')) return;
       document.querySelectorAll('#categoryButtons .cat-btn').forEach(b => b.classList.remove('active'));
@@ -1630,9 +1680,9 @@
       const filtered = PRODUCTS.filter(p => {
         const matchCat = selectedCategory === 'all' || p.category === selectedCategory;
         const matchKey = !keyword ||
-          p.name.toLowerCase().includes(keyword) ||
-          p.desc.toLowerCase().includes(keyword) ||
-          p.tags.some(t => t.toLowerCase().includes(keyword));
+          String(p.name).toLowerCase().includes(keyword) ||
+          String(p.desc).toLowerCase().includes(keyword) ||
+          (p.tags || []).some(t => String(t).toLowerCase().includes(keyword));
         return matchCat && matchKey;
       });
 
@@ -1653,7 +1703,7 @@
             <h3 class="prod-title">${p.name}</h3>
             <p class="prod-desc">${p.desc}</p>
             <div class="prod-tags">
-              ${p.tags.map(t => `<span class="prod-tag">#${t}</span>`).join('')}
+              ${(p.tags || []).map(t => `<span class="prod-tag">#${t}</span>`).join('')}
             </div>
             <div class="prod-footer">
               <span class="prod-price">${formatKRW(p.price)}</span>
@@ -1664,14 +1714,14 @@
       `).join('');
     }
 
-    // Cart Operations
+    // Cart
     function saveCart() {
       localStorage.setItem('terra_cart', JSON.stringify(cart));
       renderCart();
     }
 
     function addToCart(productId, notify = true) {
-      const existing = cart.find(item => item.id === productId);
+      const existing = cart.find(item => String(item.id) === String(productId));
       if (existing) {
         existing.qty += 1;
       } else {
@@ -1679,13 +1729,13 @@
       }
       saveCart();
       if (notify) {
-        const prod = PRODUCTS.find(p => p.id === productId);
-        showToast(`${prod.name} 장바구니 추가 완료`);
+        const prod = PRODUCTS.find(p => String(p.id) === String(productId));
+        if (prod) showToast(`${prod.name} 장바구니 추가 완료`);
       }
     }
 
     function changeQty(productId, delta) {
-      const idx = cart.findIndex(item => item.id === productId);
+      const idx = cart.findIndex(item => String(item.id) === String(productId));
       if (idx === -1) return;
       cart[idx].qty += delta;
       if (cart[idx].qty <= 0) {
@@ -1702,15 +1752,16 @@
 
     function calculateTotals() {
       const subtotal = cart.reduce((sum, item) => {
-        const p = PRODUCTS.find(prod => prod.id === item.id);
+        const p = PRODUCTS.find(prod => String(prod.id) === String(item.id));
         return sum + (p ? p.price * item.qty : 0);
       }, 0);
 
-      const freeShipThreshold = (currentUser && (currentUser.tier === 'GOLD' || currentUser.tier === 'VIP')) ? 0 :
-                                (currentUser && currentUser.tier === 'SILVER') ? 25000 : 30000;
+      const grade = currentProfile?.grade || 'WELCOME';
+      const freeShipThreshold = (grade === 'GOLD' || grade === 'VIP') ? 0 :
+                                (grade === 'SILVER') ? 25000 : 30000;
       const shipping = subtotal === 0 ? 0 : (subtotal >= freeShipThreshold ? 0 : 3000);
 
-      const availPoints = currentUser ? currentUser.points : 0;
+      const availPoints = currentProfile ? (Number(currentProfile.points) || 0) : 0;
       const inputEl = document.getElementById('usePointInput');
       let usedPoints = parseInt(inputEl.value, 10) || 0;
       if (usedPoints < 0) usedPoints = 0;
@@ -1719,26 +1770,26 @@
       inputEl.value = usedPoints > 0 ? usedPoints : '';
 
       const finalTotal = Math.max(0, subtotal + shipping - usedPoints);
-      const rewardRate = currentUser ? TIER_RULES[currentUser.tier].rate : 0;
+      const rewardRate = currentProfile ? (GRADE_RULES[grade]?.rate ?? 0.02) : 0;
       const earnedPoints = Math.floor((subtotal - usedPoints) * rewardRate);
 
       return { subtotal, shipping, usedPoints, finalTotal, rewardRate, earnedPoints };
     }
 
     function applyAllPoints() {
-      if (!currentUser) {
+      if (!currentSessionUser) {
         showToast('로그인 후 포인트를 사용할 수 있습니다.');
         return;
       }
       const { subtotal } = calculateTotals();
-      const maxUse = Math.min(currentUser.points, subtotal);
+      const maxUse = Math.min(Number(currentProfile?.points) || 0, subtotal);
       document.getElementById('usePointInput').value = maxUse;
       updateCartTotals();
     }
 
     function updateCartTotals() {
       const { subtotal, shipping, usedPoints, finalTotal, rewardRate, earnedPoints } = calculateTotals();
-      document.getElementById('drawerAvailPoints').textContent = (currentUser ? currentUser.points : 0).toLocaleString() + ' P';
+      document.getElementById('drawerAvailPoints').textContent = (currentProfile ? Number(currentProfile.points) || 0 : 0).toLocaleString() + ' P';
       document.getElementById('subtotalText').textContent = formatKRW(subtotal);
       document.getElementById('shippingText').textContent = shipping === 0 ? '무료' : formatKRW(shipping);
       document.getElementById('pointDiscountText').textContent = '-' + formatKRW(usedPoints);
@@ -1756,7 +1807,8 @@
         container.innerHTML = `<div style="text-align:center; padding:60px 10px; color:var(--text-muted);">장바구니가 비어 있습니다.<br>파스타 재료를 담아보세요!</div>`;
       } else {
         container.innerHTML = cart.map(item => {
-          const p = PRODUCTS.find(prod => prod.id === item.id);
+          const p = PRODUCTS.find(prod => String(prod.id) === String(item.id));
+          if (!p) return '';
           return `
             <div class="cart-item">
               <img src="${p.img}" alt="${p.name}">
@@ -1777,16 +1829,7 @@
       updateCartTotals();
     }
 
-    // Membership & Auth Logic
-    let authMode = 'signup';
-
-    function computeTier(totalSpent) {
-      if (totalSpent >= 300000) return 'VIP';
-      if (totalSpent >= 150000) return 'GOLD';
-      if (totalSpent >= 50000) return 'SILVER';
-      return 'BRONZE';
-    }
-
+    // Auth & shop_profiles UI
     function syncUserUI() {
       const nameEl = document.getElementById('headerUserName');
       const tierEl = document.getElementById('headerUserTier');
@@ -1797,56 +1840,71 @@
 
       document.querySelectorAll('.tier-card').forEach(card => card.classList.remove('current-tier'));
 
-      if (currentUser) {
-        currentUser.tier = computeTier(currentUser.totalSpent);
-        localStorage.setItem('terra_user', JSON.stringify(currentUser));
+      if (currentSessionUser) {
+        const displayName = currentProfile?.name || currentSessionUser.user_metadata?.name || currentSessionUser.email.split('@')[0];
+        const grade = currentProfile?.grade || 'WELCOME';
+        const points = Number(currentProfile?.points) || 0;
+        const rule = GRADE_RULES[grade] || GRADE_RULES.WELCOME;
 
-        nameEl.textContent = currentUser.name + '님';
-        tierEl.textContent = currentUser.tier;
-        tierEl.className = 'tier-chip ' + TIER_RULES[currentUser.tier].className;
-        ptEl.textContent = currentUser.points.toLocaleString() + 'P';
+        nameEl.textContent = displayName + '님';
+        tierEl.textContent = grade;
+        tierEl.className = 'tier-chip ' + rule.className;
+        ptEl.textContent = points.toLocaleString() + 'P';
 
-        dashTitle.textContent = `${currentUser.name}님은 현재 [${currentUser.tier}] 등급입니다. (보유 포인트: ${currentUser.points.toLocaleString()}P)`;
-        dashSub.textContent = `누적 구매 금액 ${formatKRW(currentUser.totalSpent)} · 결제 시 ${Math.round(TIER_RULES[currentUser.tier].rate * 100)}% 포인트 자동 적립 적용 중`;
+        dashTitle.textContent = `${displayName}님은 현재 [${grade}] 등급입니다. (보유 포인트: ${points.toLocaleString()}P)`;
+        dashSub.textContent = `역할: ${currentProfile?.role || 'member'} · 결제 시 ${Math.round(rule.rate * 100)}% 포인트 적립 적용 중`;
         logoutBtn.style.display = 'inline-block';
 
-        const activeCard = document.querySelector(`.tier-card[data-tier="${currentUser.tier}"]`);
+        const activeCard = document.querySelector(`.tier-card[data-tier="${grade}"]`);
         if (activeCard) activeCard.classList.add('current-tier');
       } else {
         nameEl.textContent = '로그인 / 회원가입';
         tierEl.textContent = 'GUEST';
-        tierEl.className = 'tier-chip bronze';
+        tierEl.className = 'tier-chip welcome';
         ptEl.textContent = '0P';
 
         dashTitle.textContent = '현재 비회원(게스트) 상태입니다.';
-        dashSub.textContent = '지금 10초 만에 회원가입하고 3,000P를 받아 첫 주문에 바로 사용해 보세요!';
+        dashSub.textContent = '지금 회원가입하고 3,000P를 받아 첫 주문에 바로 사용해 보세요!';
         logoutBtn.style.display = 'none';
       }
       renderCart();
     }
 
-    function openAuthModal() {
+    async function openAuthModal() {
       const modal = document.getElementById('authModal');
-      if (currentUser) {
+      if (currentSessionUser) {
+        currentProfile = await fetchMyProfile(currentSessionUser.id);
+        const displayName = currentProfile?.name || currentSessionUser.user_metadata?.name || currentSessionUser.email.split('@')[0];
+        const grade = currentProfile?.grade || 'WELCOME';
+        const points = Number(currentProfile?.points) || 0;
+        const rule = GRADE_RULES[grade] || GRADE_RULES.WELCOME;
+
         document.getElementById('authFormSection').style.display = 'none';
         document.getElementById('memberProfileSection').style.display = 'block';
-        document.getElementById('profileName').textContent = currentUser.name + ' 회원님';
-        document.getElementById('profileEmail').textContent = currentUser.email;
-        document.getElementById('profileSpent').textContent = formatKRW(currentUser.totalSpent);
-        document.getElementById('profilePoints').textContent = currentUser.points.toLocaleString() + ' P';
+        document.getElementById('profileName').textContent = displayName + ' 회원님';
+        document.getElementById('profileEmail').textContent = currentProfile?.email || currentSessionUser.email;
+        document.getElementById('profileRole').textContent = currentProfile?.role || 'member';
+        document.getElementById('profilePoints').textContent = points.toLocaleString() + ' P';
 
         const badge = document.getElementById('profileTierBadge');
-        badge.textContent = currentUser.tier;
-        badge.className = 'tier-chip ' + TIER_RULES[currentUser.tier].className;
+        badge.textContent = grade;
+        badge.className = 'tier-chip ' + rule.className;
 
         const historyEl = document.getElementById('orderHistoryList');
-        if (!currentUser.orders || currentUser.orders.length === 0) {
+        const { data: orders } = await db
+          .from('shop_orders')
+          .select('*')
+          .eq('user_id', currentSessionUser.id)
+          .order('created_at', { ascending: false })
+          .limit(10);
+
+        if (!orders || orders.length === 0) {
           historyEl.innerHTML = '아직 주문 내역이 없습니다.';
         } else {
-          historyEl.innerHTML = currentUser.orders.map(o => `
+          historyEl.innerHTML = orders.map(o => `
             <div style="padding:8px 0; border-bottom:1px solid var(--border-light);">
-              <strong>${o.date}</strong> · ${o.summary}<br>
-              결제: ${formatKRW(o.paid)} (적립 +${o.earned}P)
+              <strong>${new Date(o.created_at).toLocaleDateString('ko-KR')}</strong> · 상태: ${o.status || '완료'}<br>
+              결제: ${formatKRW(o.total)}
             </div>
           `).join('');
         }
@@ -1866,63 +1924,77 @@
       document.getElementById('tabSignupBtn').classList.toggle('active', mode === 'signup');
       document.getElementById('tabLoginBtn').classList.toggle('active', mode === 'login');
       document.getElementById('signupNameGroup').style.display = mode === 'signup' ? 'block' : 'none';
+      document.getElementById('signupPhoneGroup').style.display = mode === 'signup' ? 'block' : 'none';
       document.getElementById('authSubmitBtn').textContent = mode === 'signup' ? '가입하고 3,000P 받기' : '로그인하기';
     }
 
-    function handleAuthSubmit(e) {
+    async function handleAuthSubmit(e) {
       e.preventDefault();
       const email = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value;
       const nameInput = document.getElementById('authName').value.trim();
-
-      const savedAccounts = JSON.parse(localStorage.getItem('terra_accounts')) || {};
+      const phoneInput = document.getElementById('authPhone').value.trim();
 
       if (authMode === 'signup') {
         const displayName = nameInput || email.split('@')[0];
-        const newUser = {
-          name: displayName,
+        const { data, error } = await db.auth.signUp({
           email,
-          tier: 'BRONZE',
-          points: 3000,
-          totalSpent: 0,
-          orders: []
-        };
-        savedAccounts[email] = newUser;
-        localStorage.setItem('terra_accounts', JSON.stringify(savedAccounts));
-        currentUser = newUser;
-        showToast(`환영합니다, ${displayName}님! 웰컴 3,000P가 지급되었습니다.`);
-      } else {
-        if (savedAccounts[email]) {
-          currentUser = savedAccounts[email];
-          showToast(`${currentUser.name}님, 다시 오신 것을 환영합니다!`);
-        } else {
-          // Demo auto-create for seamless testing
-          const demoName = email.split('@')[0];
-          currentUser = {
-            name: demoName,
-            email,
-            tier: 'BRONZE',
-            points: 3000,
-            totalSpent: 0,
-            orders: []
-          };
-          savedAccounts[email] = currentUser;
-          localStorage.setItem('terra_accounts', JSON.stringify(savedAccounts));
-          showToast(`${demoName}님 계정이 활성화되었습니다! (3,000P 지급)`);
-        }
-      }
+          password,
+          options: {
+            data: {
+              name: displayName,
+              phone: phoneInput
+            }
+          }
+        });
 
-      syncUserUI();
-      closeModal('authModal');
+        if (error) {
+          showToast('회원가입 오류: ' + error.message);
+          return;
+        }
+
+        if (data.user) {
+          // 트리거가 shop_profiles를 만들지 않은 환경 대비 upsert 시도
+          await db.from('shop_profiles').upsert({
+            id: data.user.id,
+            email: data.user.email,
+            name: displayName,
+            phone: phoneInput,
+            grade: 'WELCOME',
+            points: 3000,
+            role: 'member'
+          }, { onConflict: 'id' });
+        }
+
+        await refreshAuthAndProfile();
+        closeModal('authModal');
+        showToast(`환영합니다, ${displayName}님! 회원가입이 완료되었습니다.`);
+      } else {
+        const { error } = await db.auth.signInWithPassword({
+          email,
+          password
+        });
+
+        if (error) {
+          showToast('로그인 오류: ' + error.message);
+          return;
+        }
+
+        await refreshAuthAndProfile();
+        closeModal('authModal');
+        showToast('로그인되었습니다!');
+      }
     }
 
-    function logoutUser() {
-      currentUser = null;
-      localStorage.removeItem('terra_user');
+    async function logoutUser() {
+      await db.auth.signOut();
+      currentSessionUser = null;
+      currentProfile = null;
       syncUserUI();
       showToast('로그아웃 되었습니다.');
     }
 
-    // Checkout & Payment Logic
+    // Checkout & shop_orders / shop_order_items 저장
     function openCheckoutModal() {
       if (cart.length === 0) {
         showToast('장바구니에 상품을 먼저 담아주세요.');
@@ -1930,9 +2002,12 @@
       }
       const { finalTotal, earnedPoints } = calculateTotals();
       document.getElementById('modalPayAmount').textContent = formatKRW(finalTotal);
-      document.getElementById('modalEarnPoints').textContent = currentUser ? `+${earnedPoints.toLocaleString()} P` : '비회원 (가입 시 적립)';
-      if (currentUser) {
-        document.getElementById('shipName').value = currentUser.name;
+      document.getElementById('modalEarnPoints').textContent = currentSessionUser ? `+${earnedPoints.toLocaleString()} P` : '비회원 (로그인 시 적립)';
+      if (currentProfile?.name) {
+        document.getElementById('shipName').value = currentProfile.name;
+      }
+      if (currentProfile?.phone) {
+        document.getElementById('shipPhone').value = currentProfile.phone;
       }
       toggleCart(false);
       document.getElementById('checkoutModal').classList.add('open');
@@ -1944,48 +2019,99 @@
       selectedPayMethod = method;
     }
 
-    function processPayment(e) {
+    async function processPayment(e) {
       e.preventDefault();
-      const { subtotal, usedPoints, finalTotal, earnedPoints } = calculateTotals();
-      const firstProd = PRODUCTS.find(p => p.id === cart[0].id);
-      const summary = cart.length > 1 ? `${firstProd.name} 외 ${cart.length - 1}건` : firstProd.name;
-
-      let upgradeMsg = '';
-      if (currentUser) {
-        const prevTier = currentUser.tier;
-        currentUser.points = currentUser.points - usedPoints + earnedPoints;
-        currentUser.totalSpent += finalTotal;
-        const newTier = computeTier(currentUser.totalSpent);
-        currentUser.tier = newTier;
-        currentUser.orders.unshift({
-          date: new Date().toLocaleDateString('ko-KR'),
-          summary,
-          paid: finalTotal,
-          earned: earnedPoints
-        });
-
-        const savedAccounts = JSON.parse(localStorage.getItem('terra_accounts')) || {};
-        savedAccounts[currentUser.email] = currentUser;
-        localStorage.setItem('terra_accounts', JSON.stringify(savedAccounts));
-
-        if (prevTier !== newTier) {
-          upgradeMsg = ` 🎉 축하합니다! [${newTier}] 등급으로 승급되었습니다!`;
-        }
+      if (!currentSessionUser) {
+        showToast('로그인 후 결제하면 주문이 DB에 저장됩니다.');
+        closeModal('checkoutModal');
+        openAuthModal();
+        return;
       }
 
+      const { usedPoints, finalTotal, earnedPoints } = calculateTotals();
+      const shipName = document.getElementById('shipName').value.trim();
+      const shipPhone = document.getElementById('shipPhone').value.trim();
+      const shipAddress = document.getElementById('shipAddress').value.trim();
+
+      const { data: orderRow, error: orderError } = await db
+        .from('shop_orders')
+        .insert({
+          user_id: currentSessionUser.id,
+          total: finalTotal,
+          status: 'PAID',
+          receiver_name: shipName,
+          receiver_phone: shipPhone,
+          address: shipAddress,
+          pay_method: selectedPayMethod
+        })
+        .select()
+        .single();
+
+      if (orderError) {
+        // 열 이름이 total, status, user_id만 있는 기본 스키마인 경우 재시도
+        const fallbackRes = await db
+          .from('shop_orders')
+          .insert({
+            user_id: currentSessionUser.id,
+            total: finalTotal,
+            status: 'PAID'
+          })
+          .select()
+          .single();
+
+        if (fallbackRes.error) {
+          showToast('주문 저장 오류: ' + fallbackRes.error.message);
+          return;
+        }
+        await insertOrderItems(fallbackRes.data.id);
+      } else {
+        await insertOrderItems(orderRow.id);
+      }
+
+      const currentPts = Number(currentProfile?.points) || 0;
+      const nextPts = Math.max(0, currentPts - usedPoints + earnedPoints);
+      await db
+        .from('shop_profiles')
+        .update({ points: nextPts })
+        .eq('id', currentSessionUser.id);
+
+      await refreshAuthAndProfile();
       cart = [];
       document.getElementById('usePointInput').value = '';
       saveCart();
-      syncUserUI();
       closeModal('checkoutModal');
-
-      showToast(`[${selectedPayMethod}] ${formatKRW(finalTotal)} 결제 완료!${upgradeMsg}`);
+      showToast(`[${selectedPayMethod}] ${formatKRW(finalTotal)} 주문이 DB에 저장되었습니다!`);
     }
+
+    async function insertOrderItems(orderId) {
+      const itemsPayload = cart.map(item => {
+        const p = PRODUCTS.find(prod => String(prod.id) === String(item.id));
+        return {
+          order_id: orderId,
+          product_id: p?.id ?? item.id,
+          qty: item.qty,
+          price: p?.price ?? 0
+        };
+      });
+
+      const { error } = await db
+        .from('shop_order_items')
+        .insert(itemsPayload);
+
+      if (error) {
+        console.warn('shop_order_items 저장 안내:', error.message);
+      }
+    }
+
+    db.auth.onAuthStateChange(async () => {
+      await refreshAuthAndProfile();
+    });
 
     // Initialize Store
     renderCuration();
     renderProducts();
-    syncUserUI();
+    loadProductsFromDB();
+    refreshAuthAndProfile();
   </script>
 </body>
 </html>
