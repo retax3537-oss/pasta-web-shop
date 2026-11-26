@@ -1362,7 +1362,13 @@
 
   <!-- Toast -->
   <div id="toast" class="toast"></div>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const db = supabase.createClient(
+    'https://uanoqsgqkviocbopcbbh.supabase.co',
+    'sb_publishable_GfDh6BHVfdVJudlOXnkX6Q_HOeEF-mj'
+  );
+</script>
   <script>
     // 1. Product Catalog Data (All images mapped to local img/ folder)
     const PRODUCTS = [
