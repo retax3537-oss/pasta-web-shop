@@ -1556,6 +1556,10 @@
         tags: Array.isArray(row.tags) ? row.tags : ['파스타 재료']
       }));
 
+      // DB 상품 목록에 없는 옛날 장바구니 항목 정리
+      cart = cart.filter(item => PRODUCTS.some(p => String(p.id) === String(item.id)));
+      saveCart();
+
       renderCuration();
       renderProducts();
     }
@@ -1903,7 +1907,7 @@
         } else {
           historyEl.innerHTML = orders.map(o => `
             <div style="padding:8px 0; border-bottom:1px solid var(--border-light);">
-              <strong>${new Date(o.created_at).toLocaleDateString('ko-KR')}</strong> · 상태: ${o.status || '완료'}<br>
+              <strong>${new Date(o.created_at).toLocaleDateString('ko-KR')}</strong> · 상태: ${o.status || '결제완료'}<br>
               결제: ${formatKRW(o.total)}
             </div>
           `).join('');
@@ -1954,7 +1958,6 @@
         }
 
         if (data.user) {
-          // 트리거가 shop_profiles를 만들지 않은 환경 대비 upsert 시도
           await db.from('shop_profiles').upsert({
             id: data.user.id,
             email: data.user.email,
@@ -2038,7 +2041,7 @@
         .insert({
           user_id: currentSessionUser.id,
           total: finalTotal,
-          status: 'PAID',
+          status: '결제완료',
           receiver_name: shipName,
           receiver_phone: shipPhone,
           address: shipAddress,
@@ -2048,13 +2051,12 @@
         .single();
 
       if (orderError) {
-        // 열 이름이 total, status, user_id만 있는 기본 스키마인 경우 재시도
         const fallbackRes = await db
           .from('shop_orders')
           .insert({
             user_id: currentSessionUser.id,
             total: finalTotal,
-            status: 'PAID'
+            status: '결제완료'
           })
           .select()
           .single();
