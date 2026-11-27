@@ -1616,7 +1616,16 @@
       slideTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
     }
 
-    // Curation
+    // Curation (DB 상품 ID와 안전하게 매칭)
+    function resolveBundleProducts(curation) {
+      if (!curation) return [];
+      return curation.productIds.map((id, idx) => {
+        const direct = PRODUCTS.find(p => String(p.id) === String(id));
+        if (direct) return direct;
+        return PRODUCTS[idx % PRODUCTS.length];
+      }).filter(Boolean);
+    }
+
     function renderCuration() {
       const tabsEl = document.getElementById('pastaTabs');
       tabsEl.innerHTML = PASTA_CURATIONS.map(c => `
@@ -1626,9 +1635,7 @@
       `).join('');
 
       const active = PASTA_CURATIONS.find(c => c.id === selectedCurationId);
-      const bundleProducts = active.productIds
-        .map(id => PRODUCTS.find(p => String(p.id) === String(id)) || FALLBACK_PRODUCTS.find(p => String(p.id) === String(id)))
-        .filter(Boolean);
+      const bundleProducts = resolveBundleProducts(active);
       const totalBundlePrice = bundleProducts.reduce((sum, p) => sum + p.price, 0);
 
       document.getElementById('bundleDisplay').innerHTML = `
@@ -1665,8 +1672,9 @@
 
     function addBundleToCart(curationId) {
       const active = PASTA_CURATIONS.find(c => c.id === curationId);
-      active.productIds.forEach(pid => addToCart(pid, false));
-      showToast(`'${active.label}' 추천 재료 ${active.productIds.length}종이 장바구니에 담겼습니다!`);
+      const bundleProducts = resolveBundleProducts(active);
+      bundleProducts.forEach(prod => addToCart(prod.id, false));
+      showToast(`'${active.label}' 추천 재료 ${bundleProducts.length}종이 장바구니에 담겼습니다!`);
       toggleCart(true);
     }
 
